@@ -2,7 +2,7 @@
 
 Sistema de IA para analise personalizada de videos, audios e documentos com interface grafica moderna.
 
-O **PyTube Copilot** transcreve conteudo de midia utilizando a API **OpenAI Whisper** e processa o resultado atraves de um pipeline configuravel de **agentes de IA** (GPT-4o-mini, GPT-4o, GPT-4-turbo, GPT-3.5-turbo), gerando roteiros, timestamps, resumos, titulos, descricoes e tags otimizadas para YouTube.
+O **PyTube Copilot** transcreve conteudo de midia utilizando a API **OpenAI Whisper** e processa o resultado atraves de um pipeline configuravel de **agentes de IA** (GPT-5.4-mini, GPT-5.4-nano), gerando roteiros, timestamps, resumos, titulos, descricoes e tags otimizadas para YouTube.
 
 ---
 
@@ -128,7 +128,7 @@ Gerenciamento dos agentes do sistema: listagem com ordem de execucao, botoes de 
 │          (Audio extraction, Transcription, Formatting)          │
 ├──────────────────┬──────────────────────────────────────────────┤
 │  OpenAI Whisper  │            OpenAI GPT Models                 │
-│  (Transcricao)   │  (gpt-4o-mini, gpt-4o, gpt-4-turbo, etc)   │
+│  (Transcricao)   │       (gpt-5.4-mini, gpt-5.4-nano)         │
 └──────────────────┴──────────────────────────────────────────────┘
 ```
 
@@ -294,7 +294,7 @@ Os prompts dos agentes suportam as seguintes variaveis, substituidas automaticam
 2. Clique em **"ADICIONAR NOVO AGENTE"**
 3. Preencha:
    - **Nome do agente**: Identificacao (ex: "ANALISE DE SENTIMENTO")
-   - **Modelo do Agente**: Selecione o modelo GPT (gpt-4o-mini, gpt-4o, etc)
+   - **Modelo do Agente**: Selecione o modelo GPT (gpt-5.4-mini, gpt-5.4-nano)
    - **Prompt de instrucao**: Escreva o prompt usando as variaveis disponiveis
 4. Clique em **"Salvar"**
 
@@ -433,4 +433,4 @@ Este projeto e privado e de uso pessoal.
 
 ---
 
-> **PyTube Copilot v2.0.0** - Powered by OpenAI Whisper & GPT-4o-mini
+> **PyTube Copilot v2.0.0** - Powered by OpenAI Whisper & GPT-5.4-mini

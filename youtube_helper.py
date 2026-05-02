@@ -64,7 +64,7 @@ def show_banner():
     console.print(Panel(
         Align.center(Text(banner, style="bold cyan")),
         title="[bold white]Analise de Videos para YouTube[/bold white]",
-        subtitle="[dim]Powered by GPT-4o-mini & Whisper[/dim]",
+        subtitle="[dim]Powered by GPT-5.4-mini & Whisper[/dim]",
         border_style="cyan",
         box=box.DOUBLE,
         padding=(0, 2)
@@ -244,7 +244,7 @@ def transcribe_audio(client: OpenAI, file_path: Path, language: str = "pt") -> d
 
 
 def call_agent(client: OpenAI, system_prompt: str, user_content: str, agent_name: str) -> str:
-    """Chama um agente GPT-4o-mini com o prompt especificado"""
+    """Chama um agente GPT-5.4-mini com o prompt especificado"""
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -253,7 +253,7 @@ def call_agent(client: OpenAI, system_prompt: str, user_content: str, agent_name
         progress.add_task(f"[cyan]{agent_name} trabalhando...", total=None)
 
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content}

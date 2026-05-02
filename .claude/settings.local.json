@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ffmpeg -version)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(winget install *)",
+      "PowerShell(ffmpeg *)",
+      "WebFetch(domain:platform.openai.com)",
+      "WebSearch"
+    ]
+  }
+}

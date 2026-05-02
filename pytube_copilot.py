@@ -104,7 +104,7 @@ COLORS = {
 
 # Modelos disponiveis
 WHISPER_MODELS = ["whisper-1"]
-GPT_MODELS = ["gpt-4o-mini", "gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"]
+GPT_MODELS = ["gpt-5.4-mini", "gpt-5.4-nano"]
 
 # Formatos de documentos suportados
 SUPPORTED_DOCUMENT_FORMATS = ['.txt', '.pdf', '.xlsx']
@@ -121,7 +121,7 @@ class Agent:
     """Modelo de dados para um agente"""
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     name: str = ""
-    model: str = "gpt-4o-mini"
+    model: str = "gpt-5.4-mini"
     prompt: str = ""
     is_system: bool = False  # Agentes do sistema nao podem ser deletados
     order: int = 0  # Ordem de processamento (menor = primeiro)
@@ -162,7 +162,7 @@ class AppConfig:
     """Configuracoes da aplicacao"""
     api_key: str = ""
     whisper_model: str = "whisper-1"
-    gpt_model: str = "gpt-4o-mini"
+    gpt_model: str = "gpt-5.4-mini"
     language: str = "pt"
     last_directory: str = ""
 
@@ -230,7 +230,7 @@ class DatabaseManager:
         agents.append(Agent(
             id="agent_roteirista",
             name="ROTEIRISTA",
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             prompt=roteirista_prompt,
             is_system=True,
             order=1
@@ -251,7 +251,7 @@ Use os timestamps EXATOS da transcricao. Identifique mudancas de topico e crie t
         agents.append(Agent(
             id="agent_timestamps",
             name="TIMESTAMPS PARA DESCRICAO DO YOUTUBE",
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             prompt=timestamps_prompt,
             is_system=True,
             order=2
@@ -272,7 +272,7 @@ Seja claro, objetivo e mantenha a essencia do conteudo original."""
         agents.append(Agent(
             id="agent_resumo",
             name="RESUMO GERAL",
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             prompt=resumo_prompt,
             is_system=True,
             order=3
@@ -285,7 +285,7 @@ Seja claro, objetivo e mantenha a essencia do conteudo original."""
         agents.append(Agent(
             id="agent_seo",
             name="TITULOS, DESCRICAO E TAGS",
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             prompt=seo_prompt,
             is_system=True,
             order=4
@@ -2764,7 +2764,7 @@ class AgentConfigWindow(ctk.CTkToplevel):
             button_color=COLORS["primary"],
             button_hover_color=COLORS["primary_hover"]
         )
-        self.model_combo.set(self.agent.model if self.agent else "gpt-4o-mini")
+        self.model_combo.set(self.agent.model if self.agent else "gpt-5.4-mini")
         self.model_combo.pack(fill="x", pady=(0, 15))
 
         # Variaveis disponiveis
